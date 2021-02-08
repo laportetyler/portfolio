@@ -1,0 +1,10 @@
+.heading {
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 6px;
+    border-bottom: solid 2px;
+  }
+
+}
