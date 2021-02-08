@@ -1,0 +1,24 @@
+.sideBar {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 30px;
+
+  button, a {
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+}
+
+.linksSideBar {
+  @extend .sideBar;
+  left: 15px;
+  right: auto;
+}
+
+.actionsSideBar {
+  @extend .sideBar;
+  left: auto;
+  right: 15px;
+}

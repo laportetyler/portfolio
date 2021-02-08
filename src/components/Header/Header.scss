@@ -1,0 +1,21 @@
+.header {
+  button, a {
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 6px;
+      border-bottom: solid 6px;
+      transform: scaleX(0);
+      transform-origin: 0;
+      transition: transform 0.25s;
+    }
+
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+
+  }
+}

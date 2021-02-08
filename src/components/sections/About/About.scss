@@ -1,0 +1,11 @@
+.about-image-container {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.about-image {
+  max-height: 360px;
+  border-radius: 25%;
+  box-shadow: 0 4px 6px, 0 1px 3px;
+  object-fit: contain;
+}
