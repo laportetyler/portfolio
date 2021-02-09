@@ -14,7 +14,7 @@ const Contact = ({ setShowContentForm, contactRef }) => {
                  I'm always open to new opportunities, so feel free to reach out to me anytime! I'll do my best to get back to you.
             </Paragraph>
             <Box elevation='primary-button' className='primary-button-container' margin={{top: 'large'}}>
-                <Button primary className='primary-button' label='Reach Out' onClick={() => setShowContentForm(true)} />
+                <Button primary className='primary-button' label='Get In Touch' onClick={() => setShowContentForm(true)} />
             </Box>
         </Box>
     )
