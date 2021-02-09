@@ -5,7 +5,7 @@ export const GrommetTheme = deepMerge(grommet, {
     global: {
         colors: {
             headerText: {
-                dark: '#7748ff',
+                dark: '#bbe1fa',
                 light: '#747fe0'
             },
             baseColor: {
@@ -13,20 +13,24 @@ export const GrommetTheme = deepMerge(grommet, {
                 light: '#8185c1'
             },
             standoutColor: {
-                dark: '#64ffda',
+                dark: '#bc6ff1',
                 light: '#f8709b'
             },
             cardBackground: {
-                dark: '#2e243f',
+                dark: '#252541',
                 light: '#bae1f3'
             },
             background: {
-                dark: '#1e1928',
+                dark: '#1a1a2e',
                 light: '#d2e0e8'
             },
             text: {
                 dark: '#5f677e',
                 light: '#6d6d6d'
+            },
+            primaryButtonText: {
+                dark: '#252541',
+                light: '#d2e0e8'
             }
         },
         font: {
@@ -75,7 +79,7 @@ export const GrommetTheme = deepMerge(grommet, {
             }
         },
         primary: {
-            color: 'background',
+            color: 'primaryButtonText',
             padding: { horizontal: 'medium' },
             border: { radius: '1px' },
             background: { color: 'standoutColor' },
