@@ -48,6 +48,9 @@ export const GrommetTheme = deepMerge(grommet, {
             }
         }
     },
+    formField: {
+        border: { position: 'outer', side: 'all' },
+    },
     button: {
         hover: {
             default: { color: 'standoutColor' },
