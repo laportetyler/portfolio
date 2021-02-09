@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Box, Grid, Grommet } from "grommet";
+import { Box, Grid, Grommet, Stack } from "grommet";
 import { GrommetTheme } from "../../theme/GrommetTheme";
 import Introduction from "../../components/sections/Introduction/Introduction";
 import About from "../../components/sections/About/About";
@@ -33,7 +33,7 @@ const PortfolioPage = () => {
 
     return (
         <Grommet theme={GrommetTheme} themeMode={darkMode ? 'dark' : 'light'} full className={'transition-background-color'}>
-            <Grid fill rows={["auto", "flex"]} ref={top} >
+            <Grid fill rows={["auto", "flex"]} ref={top} width={'xxlarge'} >
 
                 <Header pageRefs={pageRefs} />
                 <LinksSideBar/>

@@ -13,6 +13,7 @@ const Header = ({ pageRefs }) => {
         <Box
             as='header'
             direction='row-reverse'
+            fill={'horizontal'}
             pad={{vertical: 'small'}}
             className='header'
         >

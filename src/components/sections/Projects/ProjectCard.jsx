@@ -47,7 +47,7 @@ const ProjectCard = ({ project, darkMode }) => {
                         project.source && (
                             <Box pad={{top: 'small'}} direction='row'>
                                 <Box elevation='primary-button' className='primary-button-container'>
-                                    <Button className={'source-button'} primary icon={<Github/>} label='Source code' href={project.source} />
+                                    <Button className={'source-button'} primary icon={<Github/>} label='Source code' href={project.source} target={'_blank'} />
                                 </Box>
                             </Box>
                         )
