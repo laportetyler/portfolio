@@ -89,7 +89,9 @@ const ContactForm = ({setShowContentForm, darkMode}) => {
 
 
                             <Box direction="row" justify="between" margin={{top: 'medium'}}>
-                                <Button type="submit" label="Send Message" primary/>
+                                <Box elevation='primary-button' className='primary-button-container' >
+                                    <Button className={'primary-button'} type="submit" label="Send Message" primary/>
+                                </Box>
                                 <Button label="Close" onClick={disableContactForm}/>
                             </Box>
                         </Form>
