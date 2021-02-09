@@ -5,23 +5,25 @@ import './Introduction.scss'
 const Introduction = ({setShowContentForm}) => {
     return (
         <Main>
-            <Box pad={{top:'xlarge'}} margin={{top:'xlarge'}} >
-                <Heading color='standoutColor' margin='none' size='small' >Hello there, my name is</Heading>
-                <Heading color='headerText' margin='none' size='large' >Tyler Laporte</Heading>
-                <Box width={'medium'} >
-                    <Paragraph color='baseColor' >
-                        I'm a software developer at Autodata Solutions. test
-                        My passion is building [ some stuff here about developing things ]
-                    </Paragraph>
-                </Box>
-                <Box pad={{top: 'small'}} direction='row'>
-                    <Box elevation='primary-button' className='primary-button-container' >
-                        <Button primary className='primary-button' label='Contact' onClick={() => setShowContentForm(true)} />
+            <Box width={'xlarge'} align={'center'} margin={{top: '20vh'}} >
+                <Box aling={'left'}>
+                    <Heading color='standoutColor' margin='none' size='small' >Hello there, my name is</Heading>
+                    <Heading color='headerText' margin='none' size='large' >Tyler Laporte</Heading>
+                    <Box flex={false} width={'medium'} >
+                        <Paragraph  color='baseColor' >
+                            I'm a fullstack software developer at Autodata Solutions with a specialty in backend development.
+                        </Paragraph>
                     </Box>
-                    <Box elevation='primary-button' className='primary-button-container' >
-                        <Button primary className='primary-button' label='Resume' />
+                    <Box flex={false} pad={{top: 'small'}} direction='row'>
+                        <Box elevation='primary-button' className='primary-button-container' >
+                            <Button primary className='primary-button' label='Contact' onClick={() => setShowContentForm(true)} />
+                        </Box>
+                        <Box elevation='primary-button' className='primary-button-container' >
+                            <Button primary className='primary-button' label='Resume' />
+                        </Box>
                     </Box>
                 </Box>
+
             </Box>
 
         </Main>

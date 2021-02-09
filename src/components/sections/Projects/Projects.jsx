@@ -9,7 +9,7 @@ import SectionHeading from "../../SectionHeading/SectionHeading";
 const Projects = ({ darkMode, projectsRef }) => {
 
     return (
-        <Box flex={false} ref={projectsRef} >
+        <Box flex={false} ref={projectsRef} width={'xlarge'}>
             <SectionHeading>Projects</SectionHeading>
             { projects && projects.map((project) => {
                 return (

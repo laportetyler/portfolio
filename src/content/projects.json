@@ -63,8 +63,7 @@
   {
     "name": "Portfolio",
     "text": [
-      "This website! Responsive personal portfolio website built with React. Components are auto-generated from JSON data for easy maintenance.",
-      "Hosted on AWS and deployed with Travis CI."
+      "This website! Responsive personal portfolio website built with React. Components are auto-generated from JSON data for easy maintenance. Hosted on AWS and deployed with Travis CI."
     ],
     "technologies": [
       "React",
