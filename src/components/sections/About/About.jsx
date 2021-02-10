@@ -23,6 +23,7 @@ const About = ({darkMode, aboutRef}) => {
                         My expertise is in backend development -- building systems to manage large amounts of data and as creating and optimizing APIs.
                     </Paragraph>
                 </Box>
+
                 <Box>
                     <ReactCardFlip isFlipped={darkMode}
                                    flipDirection='horizontal'
@@ -31,8 +32,8 @@ const About = ({darkMode, aboutRef}) => {
                                    infinite='true'
                                    className='about-image-container'
                     >
-                        <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/light_about_image.png" />
                         <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/dark_about_image.png" />
+                        <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/light_about_image.png" />
                     </ReactCardFlip>
                 </Box>
             </Box>

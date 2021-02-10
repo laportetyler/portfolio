@@ -86,5 +86,20 @@ export const GrommetTheme = deepMerge(grommet, {
             background: { color: 'standoutColor' },
             elevation: 'large'
         }
+    },
+    heading: {
+        level: {
+            1: {
+                font: {
+                    family: 'Exo',
+                    weight: '700'
+                }
+            },
+            2: {
+                font: {
+                    family: 'Cairo'
+                }
+            }
+        }
     }
 });

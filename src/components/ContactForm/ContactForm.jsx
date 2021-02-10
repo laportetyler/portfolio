@@ -4,6 +4,7 @@ import { deepMerge } from "grommet/utils";
 import './ContactForm.scss'
 import { GrommetTheme } from "../../theme/GrommetTheme";
 import hexRgb from "hex-rgb";
+import { sendEmail } from "../../api/EmailAPI";
 
 const ContactForm = ({setShowContentForm, darkMode}) => {
 
@@ -49,6 +50,16 @@ const ContactForm = ({setShowContentForm, darkMode}) => {
         setShowContentForm(false);
     }
 
+    const submitContactForm = (emailRequest) => {
+
+        sendEmail(emailRequest)
+            .then(() => {disableContactForm()})
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+
     return (
         <Layer
             className={'layer'}
@@ -69,7 +80,7 @@ const ContactForm = ({setShowContentForm, darkMode}) => {
                         <Form
                             value={value}
                             onChange={nextValue => setValue(nextValue)}
-                            onSubmit={({value: nextValue}) => console.log(nextValue)}
+                            onSubmit={({value: nextValue}) => submitContactForm(nextValue)}
                             margin={{horizontal: 'large'}}
                             color='baseColor'
                         >
@@ -82,8 +93,8 @@ const ContactForm = ({setShowContentForm, darkMode}) => {
                             </FormField>
 
                             <Box height={'small'}>
-                                <FormField fill className={'textAreaForm'} name="message" required>
-                                    <TextArea resize={false} name="message" placeholder={'Enter Message'}/>
+                                <FormField fill className={'textAreaForm'} name="content" required>
+                                    <TextArea resize={false} name="content" placeholder={'Enter Message'}/>
                                 </FormField>
                             </Box>
 

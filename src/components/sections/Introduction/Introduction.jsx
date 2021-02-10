@@ -7,8 +7,8 @@ const Introduction = ({setShowContentForm}) => {
         <Main>
             <Box width={'xlarge'} align={'center'} margin={{top: '20vh'}} >
                 <Box aling={'left'}>
-                    <Heading color='standoutColor' margin='none' size='small' >Hello there, my name is</Heading>
-                    <Heading color='headerText' margin='none' size='large' >Tyler Laporte</Heading>
+                    <Heading level={'2'}  color='standoutColor' margin={'none'} size='small' >Hello there, my name is</Heading>
+                    <Heading level={'1'} className={'italic-font'} color='headerText' margin={{left: '-11px', vertical:'none'}} size='large' >Tyler Laporte</Heading>
                     <Box flex={false} width={'medium'} >
                         <Paragraph  color='baseColor' >
                             I'm a fullstack software developer at Autodata Solutions with a specialty in backend development.
@@ -23,9 +23,7 @@ const Introduction = ({setShowContentForm}) => {
                         </Box>
                     </Box>
                 </Box>
-
             </Box>
-
         </Main>
     )
 }
