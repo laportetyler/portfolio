@@ -12,11 +12,13 @@ import ActionsSideBar from "../../components/SideBars/ActionsSideBar";
 import './PortfolioPage.scss'
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Contact from "../../components/sections/Contact/Contact";
+import EmailSentNotification from "../../components/ContactForm/EmailSentNotification";
 
 const PortfolioPage = () => {
 
     const [darkMode, setDarkMode] = useState(false);
     const [showContactForm, setShowContentForm] = useState(false);
+    const [showEmailSuccessNotification, setShowEmailSuccessNotification] = useState(false);
 
     const bottom = useRef(null);
     const top = useRef(null);
@@ -47,7 +49,17 @@ const PortfolioPage = () => {
                     <Footer bottomRef={bottom} />
                 </Box>
 
-                { showContactForm && <ContactForm setShowContentForm={setShowContentForm} />}
+                { showContactForm &&
+                    <ContactForm
+                        setShowContentForm={setShowContentForm}
+                        showEmailSentNotification={() => setShowEmailSuccessNotification(true)}
+                    />
+                }
+                { showEmailSuccessNotification &&
+                    <EmailSentNotification
+                        onClose={() => setShowEmailSuccessNotification(false)}
+                    />
+                }
 
             </Grid>
         </Grommet>
