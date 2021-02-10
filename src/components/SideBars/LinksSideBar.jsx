@@ -6,6 +6,7 @@ import { Button } from "grommet";
 import contact from '../../content/contact.json'
 
 const LinksSideBar = () => {
+
     return (
         <SideBar className='linksSideBar'>
             <Button href={contact.linkedInUrl} target={'_blank'} icon={<Icons.LinkedinOption /> } />

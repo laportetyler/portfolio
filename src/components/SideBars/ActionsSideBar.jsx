@@ -3,18 +3,15 @@ import './SideBars.scss'
 import SideBar from "./SideBar";
 import { Button } from "grommet";
 import * as Icons from "grommet-icons";
+import scrollIntoView from "../../utils/ScrollIntoView";
 
 const ActionsSideBar = ({ toggleTheme, top, bottom }) => {
 
-    const scrollTo = (ref) => {
-        ref.current.scrollIntoView({behavior: 'smooth'});
-    }
-
     return (
         <SideBar className='actionsSideBar'>
-            <Button icon={<Icons.CaretUp />}  onClick={() => scrollTo(top)} />
+            <Button icon={<Icons.CaretUp />}  onClick={() => scrollIntoView(top)} />
             <Button icon={<Icons.View />} onClick={toggleTheme} />
-            <Button icon={<Icons.CaretDown />} onClick={() => scrollTo(bottom)} />
+            <Button icon={<Icons.CaretDown />} onClick={() => scrollIntoView(bottom)} />
         </SideBar>
     )
 }

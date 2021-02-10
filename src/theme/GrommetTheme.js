@@ -6,14 +6,14 @@ export const GrommetTheme = deepMerge(grommet, {
         colors: {
             headerText: {
                 dark: '#bbe1fa',
-                light: '#5d68ca'
+                light: '#5653a4'
             },
             baseColor: {
                 dark: '#92a3cb',
                 light: '#7578af'
             },
             standoutColor: {
-                dark: '#b258f1',
+                dark: '#ba6aff',
                 light: '#fc5e8f'
             },
             cardBackground: {

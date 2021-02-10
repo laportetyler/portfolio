@@ -13,6 +13,7 @@ import './PortfolioPage.scss'
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Contact from "../../components/sections/Contact/Contact";
 import EmailSentNotification from "../../components/ContactForm/EmailSentNotification";
+import ContactFormOverlay from "../../components/ContactForm/ContactFormOverlay";
 
 const PortfolioPage = () => {
 
@@ -33,27 +34,31 @@ const PortfolioPage = () => {
         setDarkMode(!darkMode);
     }
 
+    const contactForm = <ContactForm setShowContentForm={setShowContentForm}
+                                     showEmailSentNotification={() => setShowEmailSuccessNotification(true)}
+                                     darkMode={darkMode} />
+
     return (
         <Grommet theme={GrommetTheme} themeMode={darkMode ? 'dark' : 'light'} full className={'transition-background-color'}>
-            <Grid fill rows={["auto", "flex"]} ref={top} width={'xxlarge'} >
+            <Grid fill rows={["auto", "auto"]} ref={top} width={'xxlarge'} >
 
-                <Header pageRefs={pageRefs} />
-                <LinksSideBar/>
-                <ActionsSideBar toggleTheme={toggleTheme} top={top} bottom={bottom} />
+                <Header pageRefs={pageRefs} toggleTheme={toggleTheme} />
 
-                <Box align='center' direction={'column'}>
-                    <Introduction setShowContentForm={setShowContentForm} />
-                    <About darkMode={darkMode} aboutRef={pageRefs.about} />
-                    <Projects darkMode={darkMode} projectsRef={pageRefs.projects} />
-                    <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
-                    <Footer bottomRef={bottom} />
+                <Box direction={'row'}>
+                    <LinksSideBar />
+                    <Box fill align='center' direction={'column'}>
+                        <Introduction setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
+                        <About darkMode={darkMode} aboutRef={pageRefs.about} />
+                        <Projects darkMode={darkMode} projectsRef={pageRefs.projects} />
+                        <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
+                        <Footer bottomRef={bottom} pageRef={pageRefs} />
+                    </Box>
+                    <ActionsSideBar toggleTheme={toggleTheme} top={top} bottom={bottom} />
                 </Box>
 
+
                 { showContactForm &&
-                    <ContactForm
-                        setShowContentForm={setShowContentForm}
-                        showEmailSentNotification={() => setShowEmailSuccessNotification(true)}
-                    />
+                    <ContactFormOverlay setShowContentForm={setShowContentForm} >{contactForm}</ContactFormOverlay>
                 }
                 { showEmailSuccessNotification &&
                     <EmailSentNotification
