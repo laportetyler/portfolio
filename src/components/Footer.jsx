@@ -12,14 +12,14 @@ const Footer = ({ bottomRef }) => {
         <Box flex align={'center'} justify={'end'} ref={bottomRef}>
 
             { size === 'small' &&
-                <Box direction='row' fill={'horizontal'} pad={{vertical: 'small'}} align={'center'}>
+                <Box direction='row' fill={'horizontal'} pad={'small'} align={'center'}>
                     <Button margin={{horizontal:'medium'}} href={contact.linkedInUrl} target={'_blank'} icon={<Icons.LinkedinOption/>}/>
                     <Button margin={{horizontal:'medium'}} href={contact.gitHubUrl} target={'_blank'} icon={<Icons.Github/>}/>
                     <Button margin={{horizontal:'medium'}} href={`mailto:${contact.email}`} icon={<Icons.MailOption/>}/>
                 </Box>
             }
 
-            <Text color={'baseColor'} margin={{top: 'small'}} >
+            <Text color={'baseColor'} margin={{bottom: 'small'}} >
                 Created by Tyler Laporte
             </Text>
         </Box>
