@@ -26,7 +26,10 @@ const ProjectCard = ({ project, darkMode }) => {
                     </Stack>
                 </Box>
 
-                <Box margin={{right: 'xlarge', left: 'medium', top: 'medium', bottom: 'medium'}} width={mobileView ? '' : '60%'} className={'project-content'} >
+                <Box margin={{right: 'xlarge', left: 'medium', top: 'medium', bottom: 'medium'}}
+                     width={mobileView ? '' : '60%'}
+                     className={'project-content'}
+                >
 
                     <Heading color='headerText' margin='none' size='small'>{project.name}</Heading>
 

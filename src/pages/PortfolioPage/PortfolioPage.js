@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Box, Grid, Grommet, Stack } from "grommet";
+import { Box, Grid, Grommet, ResponsiveContext } from "grommet";
 import { GrommetTheme } from "../../theme/GrommetTheme";
 import Introduction from "../../components/sections/Introduction/Introduction";
 import About from "../../components/sections/About/About";
@@ -40,38 +40,42 @@ const PortfolioPage = () => {
 
     return (
         <Grommet theme={GrommetTheme} themeMode={darkMode ? 'dark' : 'light'} full className={'transition-background-color'}>
-            <Grid fill rows={["auto", "auto"]} ref={top} width={'xxlarge'} >
+            <ResponsiveContext.Consumer>
+                {size => (
+                    <Grid fill rows={["auto", "auto"]} ref={top} width={'xxlarge'} >
 
-                <Header pageRefs={pageRefs} toggleTheme={toggleTheme} />
+                        <Header pageRefs={pageRefs} toggleTheme={toggleTheme} />
 
-                <Box direction={'row'}>
-                    <LinksSideBar />
-                    <Box fill align='center' direction={'column'}>
-                        <Introduction setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
-                        <About darkMode={darkMode} aboutRef={pageRefs.about} />
-                        <Projects darkMode={darkMode} projectsRef={pageRefs.projects} />
+                        <Box direction={'row'}>
+                            <LinksSideBar />
+                            <Box fill align='center' direction={'column'}>
+                                <Introduction setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
+                                <About darkMode={darkMode} aboutRef={pageRefs.about} />
+                                <Projects darkMode={darkMode} projectsRef={pageRefs.projects} />
 
-                        <Box flex={false} align='center' height={'100vh'} >
-                            <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
-                            <Footer bottomRef={bottom} pageRef={pageRefs} />
+                                <Box flex={false} align='center' height={size === 'small' ? '100vh' : ''} >
+                                    <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
+                                    <Footer bottomRef={bottom} pageRef={pageRefs} />
+                                </Box>
+
+                            </Box>
+                            <ActionsSideBar toggleTheme={toggleTheme} top={top} bottom={bottom} />
                         </Box>
 
 
-                    </Box>
-                    <ActionsSideBar toggleTheme={toggleTheme} top={top} bottom={bottom} />
-                </Box>
+                        { showContactForm &&
+                        <ContactFormOverlay setShowContentForm={setShowContentForm} >{contactForm}</ContactFormOverlay>
+                        }
+                        { showEmailSuccessNotification &&
+                        <EmailSentNotification
+                            onClose={() => setShowEmailSuccessNotification(false)}
+                        />
+                        }
 
+                    </Grid>
+                )}
+            </ResponsiveContext.Consumer>
 
-                { showContactForm &&
-                    <ContactFormOverlay setShowContentForm={setShowContentForm} >{contactForm}</ContactFormOverlay>
-                }
-                { showEmailSuccessNotification &&
-                    <EmailSentNotification
-                        onClose={() => setShowEmailSuccessNotification(false)}
-                    />
-                }
-
-            </Grid>
         </Grommet>
     );
 }
