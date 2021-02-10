@@ -31,6 +31,10 @@ export const GrommetTheme = deepMerge(grommet, {
             primaryButtonText: {
                 dark: '#252541',
                 light: '#d2e0e8'
+            },
+            successNotification: {
+                dark: '#2fd73f',
+                light: '#1f811f'
             }
         },
         font: {

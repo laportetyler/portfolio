@@ -6,7 +6,7 @@ import { GrommetTheme } from "../../theme/GrommetTheme";
 import hexRgb from "hex-rgb";
 import { sendEmail } from "../../api/EmailAPI";
 
-const ContactForm = ({setShowContentForm, darkMode}) => {
+const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }) => {
 
     const convertToRGB = (hex, alpha) => {
       const rgb = hexRgb(hex);
@@ -53,12 +53,16 @@ const ContactForm = ({setShowContentForm, darkMode}) => {
     const submitContactForm = (emailRequest) => {
 
         sendEmail(emailRequest)
-            .then(() => {disableContactForm()})
+            .then(handleSuccess)
             .catch(error => {
                 console.log(error);
             })
     }
 
+    const handleSuccess = () => {
+        disableContactForm();
+        showEmailSentNotification();
+    }
 
     return (
         <Layer
