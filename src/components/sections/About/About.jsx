@@ -10,12 +10,12 @@ const About = ({darkMode, aboutRef}) => {
     const mobileView = useContext(ResponsiveContext) === 'small';
 
     return (
-        <Box flex={false} ref={aboutRef}>
+        <Box flex={false} ref={aboutRef} margin={mobileView ? {bottom: 'xlarge'} : {bottom: '150px'}} width={'xlarge'}>
             <Box direction={mobileView ? 'column' : 'row'} flex={false}>
                 <Box >
 
                     <SectionHeading>About</SectionHeading>
-                    <Box width={mobileView ? '' : 'large'} >
+                    <Box margin={mobileView ? {top: 'large'} : {top:'large', right: 'medium'}} >
                     { aboutMessages && aboutMessages.map((aboutMessage) => {
                         return (
                             <Paragraph fill color={'baseColor'} >
@@ -28,7 +28,7 @@ const About = ({darkMode, aboutRef}) => {
 
                 </Box>
 
-                <Box margin={{horizontal: 'medium', top: 'large' }} height={mobileView ? '' : '100%'} align={'center'} justify={'center'} flex={false} >
+                <Box margin={{left: 'large', top: 'large' }} height={mobileView ? '' : '100%'} align={'center'} justify={'center'} flex={false} >
                     <ReactCardFlip isFlipped={darkMode}
                                    flipDirection='horizontal'
                                    flipSpeedBackToFront={2}

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProjectCard from "./ProjectCard";
 import './Projects.scss'
 import projects from "../../../content/projects.json";
 import ReactCardFlip from "react-card-flip";
-import { Box } from "grommet";
+import { Box, ResponsiveContext } from "grommet";
 import SectionHeading from "../../SectionHeading/SectionHeading";
 
 const Projects = ({ darkMode, projectsRef }) => {
 
+    const mobileView = useContext(ResponsiveContext) === 'small';
+
     return (
-        <Box flex={false} ref={projectsRef} width={'xlarge'}>
+        <Box flex={false} ref={projectsRef} width={'xlarge'} margin={mobileView ? '100px' : 'large'} >
             <SectionHeading>Projects</SectionHeading>
             { projects && projects.map((project) => {
                 return (
