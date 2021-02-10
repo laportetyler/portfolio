@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Button, Form, FormField, Heading, Layer, TextArea, TextInput, ThemeContext } from "grommet";
+import React, { useContext } from 'react';
+import { Box, Button, Form, FormField, Heading, Layer, ResponsiveContext, TextArea, TextInput, ThemeContext } from "grommet";
 import { deepMerge } from "grommet/utils";
 import './ContactForm.scss'
 import { GrommetTheme } from "../../theme/GrommetTheme";
@@ -64,57 +64,43 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
         showEmailSentNotification();
     }
 
+    const mobileView = useContext(ResponsiveContext) === 'small';
+
     return (
-        <Layer
-            className={'layer'}
-            onEsc={disableContactForm}
-            onClickOutside={disableContactForm}
-        >
-            <Box width={'medium'} background={'background'} round={'medium'} >
-                <ThemeContext.Extend value={theme}>
-                    <Box margin={'medium'} color={'baseColor'}>
-                        <Heading fill textAlign={'center'}
-                                 color='headerText'
-                                 size='small'
-                                 margin={{bot: 'medium'}}
-                        >
-                            Contact
-                        </Heading>
 
-                        <Form
-                            value={value}
-                            onChange={nextValue => setValue(nextValue)}
-                            onSubmit={({value: nextValue}) => submitContactForm(nextValue)}
-                            margin={{horizontal: 'large'}}
-                            color='baseColor'
-                        >
-                            <FormField name="name" required>
-                                <TextInput color={'baseColor'} name="name" type="name" placeholder={'Enter Name'}/>
-                            </FormField>
+        <Box width={mobileView ? '80%' : ''} margin={'medium'} color={'baseColor'}>
+            <ThemeContext.Extend value={theme}>
+                <Form
+                    value={value}
+                    onChange={nextValue => setValue(nextValue)}
+                    onSubmit={({value: nextValue}) => submitContactForm(nextValue)}
+                    margin={{horizontal: 'large'}}
+                    color='baseColor'
+                >
+                    <FormField name="name" required>
+                        <TextInput color={'baseColor'} name="name" type="name" placeholder={'Enter Name'}/>
+                    </FormField>
 
-                            <FormField name="email" required>
-                                <TextInput color={'baseColor'} name="email" type="email" placeholder={'Enter Email'}/>
-                            </FormField>
+                    <FormField name="email" required>
+                        <TextInput color={'baseColor'} name="email" type="email" placeholder={'Enter Email'}/>
+                    </FormField>
 
-                            <Box height={'small'}>
-                                <FormField fill className={'textAreaForm'} name="content" required>
-                                    <TextArea resize={false} name="content" placeholder={'Enter Message'}/>
-                                </FormField>
-                            </Box>
-
-
-                            <Box direction="row" justify="between" margin={{top: 'medium'}}>
-                                <Box elevation='primary-button' className='primary-button-container' >
-                                    <Button className={'primary-button'} type="submit" label="Send Message" primary/>
-                                </Box>
-                                <Button label="Close" onClick={disableContactForm}/>
-                            </Box>
-                        </Form>
+                    <Box height={'small'}>
+                        <FormField fill className={'textAreaForm'} name="content" required>
+                            <TextArea resize={false} name="content" placeholder={'Enter Message'}/>
+                        </FormField>
                     </Box>
-                </ThemeContext.Extend>
-            </Box>
 
-        </Layer>
+
+                    <Box direction="row" justify="between" margin={{top: 'medium'}}>
+                        <Box fill={mobileView} elevation='primary-button' className='primary-button-container' margin={'none'}>
+                            <Button className={'primary-button'} type="submit" label="Send Message" primary/>
+                        </Box>
+                        { !mobileView && <Button label="Close" onClick={disableContactForm}/> }
+                    </Box>
+                </Form>
+            </ThemeContext.Extend>
+        </Box>
     )
 }
 

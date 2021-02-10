@@ -1,12 +1,19 @@
-import React from 'react';
-import { Box, Button } from 'grommet';
-import { Notification, View } from "grommet-icons";
+import React, { useContext } from 'react';
+import { Box, Button, ResponsiveContext } from 'grommet';
 import './Header.scss'
+import scrollIntoView from "../../utils/ScrollIntoView";
+import * as Icons from "grommet-icons";
 
-const Header = ({ pageRefs }) => {
+const Header = ({ pageRefs, toggleTheme }) => {
 
-    const scrollTo = (ref) => {
-        ref.current.scrollIntoView({behavior: 'smooth'});
+    const size = useContext(ResponsiveContext);
+
+    if (size === 'small') {
+        return (
+            <Box as='header' margin={{top:'small'}} className={'mobileHeader'}>
+                <Button icon={<Icons.View />} onClick={toggleTheme} />
+            </Box>
+        )
     }
 
     return (
@@ -17,9 +24,9 @@ const Header = ({ pageRefs }) => {
             pad={{vertical: 'small'}}
             className='header'
         >
-            <Button pad={{horizontal: 'large'}} secondary label='Contact' onClick={() => scrollTo(pageRefs.contact)} />
-            <Button pad={{horizontal: 'large'}} secondary label='Projects' onClick={() => scrollTo(pageRefs.projects)} />
-            <Button pad={{horizontal: 'large'}} secondary label='About' onClick={() => scrollTo(pageRefs.about)} />
+            <Button pad={{horizontal: 'large'}} secondary label='Contact' onClick={() => scrollIntoView(pageRefs.contact)} />
+            <Button pad={{horizontal: 'large'}} secondary label='Projects' onClick={() => scrollIntoView(pageRefs.projects)} />
+            <Button pad={{horizontal: 'large'}} secondary label='About' onClick={() => scrollIntoView(pageRefs.about)} />
         </Box>
     )
 }

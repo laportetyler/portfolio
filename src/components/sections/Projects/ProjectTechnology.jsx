@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Text } from "grommet";
 
-const ProjectTechnology = ({ headerText, standoutColor, technology }) => {
+const ProjectTechnology = ({ headerText, technology }) => {
     return (
         <Box className={'project-technology'}
-             border={{ color: standoutColor, size: 'small'}} >
+             border={{ color: headerText, size: 'small'}} >
             <Text color={headerText} >{ technology }</Text>
         </Box>
     )

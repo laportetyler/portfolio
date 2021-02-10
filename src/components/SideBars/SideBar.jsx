@@ -1,12 +1,24 @@
-import React from 'react';
-import { Chart, Nav } from "grommet";
+import React, { useContext } from 'react';
+import { Box, Nav, ResponsiveContext } from "grommet";
 
 const SideBar = ({ children, className }) => {
 
+    const size = useContext(ResponsiveContext);
+
+    if (size === 'small') {
+        return (
+            <Box fill={'vertical'} pad={{horizontal: 'medium'}} />
+        )
+    }
+
     return (
-        <Nav direction='column' className={className}>
-            {children}
-        </Nav>
+        <Box>
+            <Box fill={'vertical'} pad={{horizontal: 'large'}} />
+            <Nav direction='column' className={className}>
+                {children}
+            </Nav>
+        </Box>
+
     )
 }
 

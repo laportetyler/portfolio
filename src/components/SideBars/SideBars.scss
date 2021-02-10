@@ -13,12 +13,12 @@
 
 .linksSideBar {
   @extend .sideBar;
-  left: 15px;
+  left: 0;
   right: auto;
 }
 
 .actionsSideBar {
   @extend .sideBar;
   left: auto;
-  right: 15px;
+  right: 0;
 }
