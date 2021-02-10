@@ -8,7 +8,7 @@ const Contact = ({ setShowContentForm, contactRef, children }) => {
 
     return (
         <Box align={'center'} flex={false} ref={contactRef} fiil={'horizontal'}
-             margin={mobileView ? {horizontal: 'xlarge', vertical: '10px'} : 'xlarge'}
+             margin={mobileView ? {vertical: '10px'} : 'xlarge'}
              pad={mobileView ? '' : {bottom: 'xlarge'}}
         >
             <SectionHeading align={'center'} >Contact</SectionHeading>
