@@ -50,8 +50,13 @@ const PortfolioPage = () => {
                         <Introduction setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
                         <About darkMode={darkMode} aboutRef={pageRefs.about} />
                         <Projects darkMode={darkMode} projectsRef={pageRefs.projects} />
-                        <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
-                        <Footer bottomRef={bottom} pageRef={pageRefs} />
+
+                        <Box flex={false} align='center' height={'100vh'} >
+                            <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
+                            <Footer bottomRef={bottom} pageRef={pageRefs} />
+                        </Box>
+
+
                     </Box>
                     <ActionsSideBar toggleTheme={toggleTheme} top={top} bottom={bottom} />
                 </Box>

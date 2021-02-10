@@ -6,11 +6,12 @@ const SectionHeading = ({align, children}) => {
     return (
         <Box flex={false} margin={'none'} >
             <Box  flex={false} alignSelf={align ? align : 'left'}>
-                <Heading fill textAlign={'left'}
-                         alignSelf={'left'}
+                <Heading fill
                          color='headerText'
                          className='heading transition-color'
                          size='small'
+                         margin={'none'}
+                         responsive={false}
                 >
                     {children}
                 </Heading>

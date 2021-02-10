@@ -7,7 +7,7 @@ const SideBar = ({ children, className }) => {
 
     if (size === 'small') {
         return (
-            <Box fill={'vertical'} pad={{horizontal: 'medium'}} />
+            <Box fill={'vertical'} pad={{horizontal: '20px'}} />
         )
     }
 

@@ -9,7 +9,7 @@ const Footer = ({ bottomRef }) => {
 
     return (
 
-        <Box flex={false} align={'center'} ref={bottomRef}>
+        <Box flex align={'center'} justify={'end'} ref={bottomRef}>
 
             { size === 'small' &&
                 <Box direction='row' fill={'horizontal'} pad={{vertical: 'small'}} align={'center'}>
@@ -19,7 +19,7 @@ const Footer = ({ bottomRef }) => {
                 </Box>
             }
 
-            <Text color={'baseColor'}>
+            <Text color={'baseColor'} margin={{top: 'small'}} >
                 Created by Tyler Laporte
             </Text>
         </Box>
