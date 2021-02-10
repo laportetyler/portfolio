@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Button, Form, FormField, Heading, Layer, ResponsiveContext, TextArea, TextInput, ThemeContext } from "grommet";
 import { deepMerge } from "grommet/utils";
 import './ContactForm.scss'
@@ -43,10 +43,11 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
         }
     })
 
-    const [value, setValue] = React.useState({});
+    const defaultFormValue = {name: '', email: '', content: ''}
+    const [value, setValue] = useState(defaultFormValue);
 
     const disableContactForm = () => {
-        setValue({});
+        setValue(defaultFormValue);
         setShowContentForm(false);
     }
 
@@ -68,7 +69,7 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
 
     return (
 
-        <Box width={mobileView ? '80%' : ''} margin={'medium'} color={'baseColor'}>
+        <Box width={mobileView ? '90%' : ''} margin={'medium'} color={'baseColor'}>
             <ThemeContext.Extend value={theme}>
                 <Form
                     value={value}
