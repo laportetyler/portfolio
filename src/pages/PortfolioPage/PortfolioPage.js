@@ -17,6 +17,12 @@ import ThemeContext from "../../context/ThemeContext";
 
 const PortfolioPage = () => {
 
+    window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+
     const [darkMode, setDarkMode] = useState(false);
     const [initialDarkMode, setInitialDarkMode] = useState(false);
     const [showContactForm, setShowContentForm] = useState(false);
@@ -70,7 +76,7 @@ const PortfolioPage = () => {
                                             <About aboutRef={pageRefs.about} />
                                             <Projects projectsRef={pageRefs.projects} />
 
-                                            <Box flex={false} align='center' height={size === 'small' ? '100vh' : ''} >
+                                            <Box flex={false} align='center' className={size === 'small' ? 'viewport-height' : ''} >
                                                 <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
                                                 <Footer bottomRef={pageRefs.bottom} />
                                             </Box>
