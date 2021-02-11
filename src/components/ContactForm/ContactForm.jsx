@@ -6,6 +6,7 @@ import { GrommetTheme } from "../../theme/GrommetTheme";
 import hexRgb from "hex-rgb";
 import { sendEmail } from "../../api/EmailAPI";
 import ElevatedButton from "../ElevatedButton";
+import FlipButton from "../FlipButton";
 
 const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }) => {
 
@@ -107,7 +108,11 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
 
                     <ThemeContext.Extend value={buttonTheme}>
                         <Box direction="row" justify="between" margin={{top: 'medium'}}>
-                            <ElevatedButton fill={mobileView} type="submit" label="Send Message" primary />
+                            {
+                                mobileView ? <FlipButton darkMode={darkMode} type="submit" label="Send Message" primary fill /> :
+                                             <ElevatedButton type="submit" label="Send Message" primary />
+                            }
+
                             {!mobileView && <Button label="Close" onClick={disableContactForm}/>}
                         </Box>
                     </ThemeContext.Extend>

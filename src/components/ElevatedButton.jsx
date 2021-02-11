@@ -3,7 +3,7 @@ import { Box, Button } from "grommet";
 import styled from "styled-components";
 
 
-const ElevatedButton = ({fill, ...buttonProps}) => {
+const ElevatedButton = ({...buttonProps}) => {
 
     const ElevatedButtonContainer = styled(Box)`
         box-shadow: 0 4px 6px, 0 1px 3px;
@@ -20,7 +20,7 @@ const ElevatedButton = ({fill, ...buttonProps}) => {
     `
 
     return (
-        <ElevatedButtonContainer fill={fill} className='primary-button-container' >
+        <ElevatedButtonContainer className='primary-button-container' >
             <Button {...buttonProps} />
         </ElevatedButtonContainer>
     )
