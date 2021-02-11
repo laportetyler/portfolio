@@ -5,6 +5,7 @@ import './ContactForm.scss'
 import { GrommetTheme } from "../../theme/GrommetTheme";
 import hexRgb from "hex-rgb";
 import { sendEmail } from "../../api/EmailAPI";
+import ElevatedButton from "../ElevatedButton";
 
 const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }) => {
 
@@ -17,7 +18,6 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
     const theme = deepMerge(GrommetTheme, {
         global: {
             colors: {
-                text: grommetThemeColors.baseColor,
                 placeholder: {
                     dark: convertToRGB(grommetThemeColors.baseColor.dark, '0.35'),
                     light: convertToRGB(grommetThemeColors.baseColor.light, '0.35'),
@@ -32,7 +32,7 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
         },
         formField: {
             border: {
-                color: grommetThemeColors.headerText,
+                color: grommetThemeColors.baseColor,
                 size: '2px'
             },
             content: {pad: 'large'},
@@ -40,6 +40,18 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
         },
         box: {
             extend: {color: darkMode ? grommetThemeColors.baseColor.dark : grommetThemeColors.baseColor.light}
+        }
+    })
+
+    const buttonTheme = deepMerge(GrommetTheme, {
+        button: {
+            default: {
+                color: 'baseColor',
+                border: {
+                    width: '2px',
+                    radius: '16px'
+                }
+            }
         }
     })
 
@@ -70,7 +82,6 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
     return (
 
         <Box width={mobileView ? '90%' : ''} margin={'medium'} color={'baseColor'}>
-            <ThemeContext.Extend value={theme}>
                 <Form
                     value={value}
                     onChange={nextValue => setValue(nextValue)}
@@ -78,29 +89,30 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
                     margin={{horizontal: 'large'}}
                     color='baseColor'
                 >
-                    <FormField name="name" required>
-                        <TextInput color={'baseColor'} name="name" type="name" placeholder={'Enter Name'}/>
-                    </FormField>
-
-                    <FormField name="email" required>
-                        <TextInput color={'baseColor'} name="email" type="email" placeholder={'Enter Email'}/>
-                    </FormField>
-
-                    <Box height={'small'}>
-                        <FormField fill className={'textAreaForm'} name="content" required>
-                            <TextArea resize={false} name="content" placeholder={'Enter Message'}/>
+                    <ThemeContext.Extend value={theme}>
+                        <FormField name="name" required>
+                            <TextInput color={'baseColor'} name="name" type="name" placeholder={'Enter Name'}/>
                         </FormField>
-                    </Box>
 
+                        <FormField name="email" required>
+                            <TextInput color={'baseColor'} name="email" type="email" placeholder={'Enter Email'}/>
+                        </FormField>
 
-                    <Box direction="row" justify="between" margin={{top: 'medium'}}>
-                        <Box fill={mobileView} elevation='primary-button' className='primary-button-container' margin={'none'}>
-                            <Button className={'primary-button'} type="submit" label="Send Message" primary/>
+                        <Box height={'small'}>
+                            <FormField fill className={'textAreaForm'} name="content" required>
+                                <TextArea resize={false} name="content" placeholder={'Enter Message'}/>
+                            </FormField>
                         </Box>
-                        { !mobileView && <Button label="Close" onClick={disableContactForm}/> }
-                    </Box>
+                    </ThemeContext.Extend>
+
+                    <ThemeContext.Extend value={buttonTheme}>
+                        <Box direction="row" justify="between" margin={{top: 'medium'}}>
+                            <ElevatedButton fill={mobileView} type="submit" label="Send Message" primary />
+                            {!mobileView && <Button label="Close" onClick={disableContactForm}/>}
+                        </Box>
+                    </ThemeContext.Extend>
+
                 </Form>
-            </ThemeContext.Extend>
         </Box>
     )
 }

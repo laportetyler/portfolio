@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { Box, Button, Heading, Paragraph, ResponsiveContext } from "grommet";
+import { Box, Paragraph, ResponsiveContext } from "grommet";
 import SectionHeading from "../../SectionHeading/SectionHeading";
+import FlipButton from "../../FlipButton";
 
-const Contact = ({ setShowContentForm, contactRef, children }) => {
+const Contact = ({ darkMode, setShowContentForm, contactRef, children }) => {
 
     const mobileView = useContext(ResponsiveContext) === 'small';
 
@@ -17,10 +18,7 @@ const Contact = ({ setShowContentForm, contactRef, children }) => {
             </Paragraph>
 
             {
-                mobileView ? children :
-                    <Box elevation='primary-button' className='primary-button-container' margin={{top: 'large'}}>
-                        <Button primary className='primary-button' label='Get In Touch' onClick={() => setShowContentForm(true)} />
-                    </Box>
+                mobileView ? children : <FlipButton darkMode={darkMode} primary label={'Get In Touch'} onClick={() => setShowContentForm(true)} />
             }
 
 

@@ -3,6 +3,7 @@ import { Box, Button, Card, Heading, Image, Main, Paragraph, ResponsiveContext, 
 import { GrommetTheme } from "../../../theme/GrommetTheme";
 import ProjectTechnology from "./ProjectTechnology";
 import { Github } from "grommet-icons";
+import ElevatedButton from "../../ElevatedButton";
 
 const ProjectCard = ({ project, darkMode }) => {
 
@@ -26,7 +27,7 @@ const ProjectCard = ({ project, darkMode }) => {
                     </Stack>
                 </Box>
 
-                <Box margin={{right: 'xlarge', left: 'medium', top: 'medium', bottom: 'medium'}}
+                <Box margin={mobileView ? 'large' : {right: 'xlarge', left: 'medium', vertical: 'medium'}}
                      width={mobileView ? '' : '60%'}
                      className={'project-content'}
                 >
@@ -39,7 +40,7 @@ const ProjectCard = ({ project, darkMode }) => {
                         })
                     }
 
-                    <Box margin={{top: 'small'}} direction={'row'} className={'project-technologies'}>
+                    <Box align={'center'} margin={{top: 'small'}} direction={'row'} className={'project-technologies'}>
                         {
                             project.technologies && project.technologies.map((technology) => {
                                 return <ProjectTechnology headerText={headerText} technology={technology}/>
@@ -49,13 +50,10 @@ const ProjectCard = ({ project, darkMode }) => {
 
                     {
                         project.source && (
-                            <Box pad={{top: 'small'}} direction='row'>
-                                <Box elevation='primary-button' className='primary-button-container'>
-                                    <Button className={'source-button'} primary icon={<Github/>} label='Source code' href={project.source} target={'_blank'} />
-                                </Box>
+                            <Box pad={{top: 'small'}} direction='row' fill={'horizontal'} align={mobileView ? 'center' : 'left'}>
+                                <ElevatedButton primary icon={<Github/>} label='Source code' href={project.source} target={'_blank'} />
                             </Box>
                         )
-
                     }
 
                 </Box>

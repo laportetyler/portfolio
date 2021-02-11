@@ -16,7 +16,7 @@ const ContactFormOverlay = ({ setShowContentForm, children }) => {
         >
             <Box width={'medium'} background={'background'} round={'medium'}>
                 <Heading fill textAlign={'center'}
-                         color='headerText'
+                         color='baseColor'
                          size='small'
                          margin={{bot: 'medium'}}
                 >
