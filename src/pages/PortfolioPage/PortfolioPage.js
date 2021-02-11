@@ -66,7 +66,7 @@ const PortfolioPage = () => {
                                     <Box direction={'row'}>
                                         <LinksSideBar />
                                         <Box fill align='center' direction={'column'}>
-                                            <Introduction setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
+                                            <Introduction setShowContentForm={setShowContentForm} bottomRef={pageRefs.bottom} />
                                             <About aboutRef={pageRefs.about} />
                                             <Projects projectsRef={pageRefs.projects} />
 

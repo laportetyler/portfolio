@@ -3,11 +3,11 @@ import { Box, Heading, Main, Paragraph, ResponsiveContext } from "grommet";
 import scrollIntoView from "../../../utils/ScrollIntoView";
 import FlipButton from "../../FlipButton";
 
-const Introduction = ({setShowContentForm, contactRef}) => {
+const Introduction = ({setShowContentForm, bottomRef}) => {
 
     const size = useContext(ResponsiveContext);
 
-    const contactOnClick = size === 'small' ? () => scrollIntoView(contactRef) : () => setShowContentForm(true);
+    const contactOnClick = size === 'small' ? () => scrollIntoView(bottomRef) : () => setShowContentForm(true);
 
     return (
         <Main>
