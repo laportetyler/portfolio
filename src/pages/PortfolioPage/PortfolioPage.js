@@ -15,22 +15,17 @@ import EmailSentNotification from "../../components/ContactForm/EmailSentNotific
 import ContactFormOverlay from "../../components/ContactForm/ContactFormOverlay";
 import ThemeContext from "../../context/ThemeContext";
 
-const PortfolioPage = () => {
+const PortfolioPage = ({initialDarkMode}) => {
 
-    const [darkMode, setDarkMode] = useState(false);
-    const [initialDarkMode, setInitialDarkMode] = useState(false);
+    console.log('re-render: ' + initialDarkMode );
+
+    const [darkMode, setDarkMode] = useState(initialDarkMode);
     const [showContactForm, setShowContentForm] = useState(false);
     const [showEmailSuccessNotification, setShowEmailSuccessNotification] = useState(false);
 
     const toggleTheme = () => {
         setDarkMode(!darkMode);
     }
-
-    useEffect(() => {
-        const darkMode = localStorage.getItem('darkMode') === 'true';
-        setInitialDarkMode(darkMode);
-        setDarkMode(darkMode);
-    }, [])
 
     useEffect(() => {
         localStorage.setItem('darkMode', Boolean(darkMode).toString());
