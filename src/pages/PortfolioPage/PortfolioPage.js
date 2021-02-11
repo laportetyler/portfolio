@@ -70,7 +70,7 @@ const PortfolioPage = () => {
                                             <About aboutRef={pageRefs.about} />
                                             <Projects projectsRef={pageRefs.projects} />
 
-                                            <Box flex={false} align='center' className={size === 'small' ? 'fill-available' : ''} >
+                                            <Box flex={false} align='center' height={size === 'small' ? '100vh' : ''} >
                                                 <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
                                                 <Footer bottomRef={pageRefs.bottom} />
                                             </Box>
