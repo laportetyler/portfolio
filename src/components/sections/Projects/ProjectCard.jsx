@@ -27,7 +27,7 @@ const ProjectCard = ({ project, darkMode }) => {
                     </Stack>
                 </Box>
 
-                <Box margin={mobileView ? 'large' : {right: 'xlarge', left: 'medium', vertical: 'medium'}}
+                <Box margin={mobileView ? {left: 'medium', right:'small', vertical:'large'} : {right: 'xlarge', left: 'medium', vertical: 'medium'}}
                      width={mobileView ? '' : '60%'}
                      className={'project-content'}
                 >
