@@ -5,7 +5,7 @@ export const GrommetTheme = deepMerge(grommet, {
     global: {
         colors: {
             headerText: {
-                dark: '#bbe1fa',
+                dark: '#a4c7de',
                 light: '#5653a4'
             },
             baseColor: {
@@ -13,7 +13,7 @@ export const GrommetTheme = deepMerge(grommet, {
                 light: '#7578af'
             },
             standoutColor: {
-                dark: '#ba6aff',
+                dark: '#9251c4',
                 light: '#fc5e8f'
             },
             cardBackground: {
@@ -25,7 +25,7 @@ export const GrommetTheme = deepMerge(grommet, {
                 light: '#d2e0e8'
             },
             text: {
-                dark: 'rgba(255, 255, 255, 0.20)',
+                dark: 'rgba(255, 255, 255, 0.1)',
                 light: '#6d6d6d'
             },
             primaryButtonText: {
@@ -46,15 +46,6 @@ export const GrommetTheme = deepMerge(grommet, {
             border: {
                 color: 'transparent'
             },
-        },
-        elevation: {
-            light: {
-                'primary-button': 'box-shadow: 0 4px 6px #2d2d2d, 0 1px 3px #2d2d2d'
-            },
-            dark: {
-                'small': '0px 4px 4px rgba(255, 255, 255, 0.20)',
-                'primary-button': 'box-shadow: 0 4px 6px, 0 1px 3px'
-            }
         }
     },
     formField: {

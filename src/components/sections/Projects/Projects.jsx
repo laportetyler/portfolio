@@ -17,7 +17,7 @@ const Projects = ({ darkMode, projectsRef }) => {
                 return (
                     <Box flex={false} margin={{top: 'large'}} >
                         <ReactCardFlip isFlipped={darkMode}
-                                       flipDirection='vertical'
+                                       flipDirection={mobileView ? 'horizontal' : 'vertical'}
                                        flipSpeedBackToFront={2}
                                        flipSpeedFrontToBack={2}
                                        infinite='true'
