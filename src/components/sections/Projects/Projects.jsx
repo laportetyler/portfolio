@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import ProjectCard from "./ProjectCard";
 import './Projects.scss'
 import projects from "../../../content/projects.json";
-import ReactCardFlip from "react-card-flip";
 import { Box, ResponsiveContext } from "grommet";
 import SectionHeading from "../../SectionHeading/SectionHeading";
+import ThemedReactFlipCard from "../../ThemedReactFlipCard";
 
-const Projects = ({ darkMode, projectsRef }) => {
+const Projects = ({ projectsRef }) => {
 
     const mobileView = useContext(ResponsiveContext) === 'small';
 
@@ -16,16 +16,15 @@ const Projects = ({ darkMode, projectsRef }) => {
             { projects && projects.map((project) => {
                 return (
                     <Box flex={false} margin={{top: 'large'}} >
-                        <ReactCardFlip isFlipped={darkMode}
-                                       flipDirection={mobileView ? 'horizontal' : 'vertical'}
-                                       flipSpeedBackToFront={2}
-                                       flipSpeedFrontToBack={2}
-                                       infinite='true'
-                                       className={'project'}
-                        >
-                            <ProjectCard project={project} darkMode={false} />
-                            <ProjectCard project={project} darkMode={true} />
-                        </ReactCardFlip>
+                        <ThemedReactFlipCard
+                            flipDirection={mobileView ? 'horizontal' : 'vertical'}
+                            flipSpeedBackToFront={2}
+                            flipSpeedFrontToBack={2}
+                            infinite='true'
+                            className={'project'}
+                            lightCard={<ProjectCard project={project} darkMode={false} />}
+                            darkCard={<ProjectCard project={project} darkMode={true} />}
+                        />
                     </Box>
 
                 )

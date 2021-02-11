@@ -3,7 +3,7 @@ import { Box, Heading, Main, Paragraph, ResponsiveContext } from "grommet";
 import scrollIntoView from "../../../utils/ScrollIntoView";
 import FlipButton from "../../FlipButton";
 
-const Introduction = ({setShowContentForm, contactRef, darkMode}) => {
+const Introduction = ({setShowContentForm, contactRef}) => {
 
     const size = useContext(ResponsiveContext);
 
@@ -21,8 +21,8 @@ const Introduction = ({setShowContentForm, contactRef, darkMode}) => {
                         </Paragraph>
                     </Box>
                     <Box flex={false} pad={{top: 'small'}} direction='row'>
-                        <FlipButton darkMode={darkMode} primary label={'Contact'} onClick={contactOnClick}  />
-                        <FlipButton darkMode={darkMode} primary label={'Resume'} />
+                        <FlipButton primary label={'Contact'} onClick={contactOnClick}  />
+                        <FlipButton primary label={'Resume'} />
                     </Box>
                 </Box>
             </Box>

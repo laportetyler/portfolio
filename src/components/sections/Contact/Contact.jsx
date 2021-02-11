@@ -3,7 +3,7 @@ import { Box, Paragraph, ResponsiveContext } from "grommet";
 import SectionHeading from "../../SectionHeading/SectionHeading";
 import FlipButton from "../../FlipButton";
 
-const Contact = ({ darkMode, setShowContentForm, contactRef, children }) => {
+const Contact = ({ setShowContentForm, contactRef, children }) => {
 
     const mobileView = useContext(ResponsiveContext) === 'small';
 
@@ -18,7 +18,7 @@ const Contact = ({ darkMode, setShowContentForm, contactRef, children }) => {
             </Paragraph>
 
             {
-                mobileView ? children : <FlipButton darkMode={darkMode} primary label={'Get In Touch'} onClick={() => setShowContentForm(true)} />
+                mobileView ? children : <FlipButton primary label={'Get In Touch'} onClick={() => setShowContentForm(true)} />
             }
 
 

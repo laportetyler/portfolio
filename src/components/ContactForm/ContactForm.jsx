@@ -1,27 +1,25 @@
 import React, { useContext, useState } from 'react';
-import { Box, Button, Form, FormField, ResponsiveContext, TextArea, TextInput, ThemeContext } from "grommet";
+import { Box, Button, Form, FormField, ResponsiveContext, TextArea, TextInput, ThemeContext as GrommetThemeContext } from "grommet";
 import { deepMerge } from "grommet/utils";
 import './ContactForm.scss'
 import { GrommetTheme } from "../../theme/GrommetTheme";
-import hexRgb from "hex-rgb";
 import { sendEmail } from "../../api/EmailAPI";
 import ElevatedButton from "../ElevatedButton";
 import FlipButton from "../FlipButton";
+import hexColorWithAlpha from "../../utils/HexColorWithAlpha";
+import ThemeContext from "../../context/ThemeContext";
 
-const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }) => {
+const ContactForm = ({ setShowContentForm, showEmailSentNotification }) => {
 
-    const convertToRGB = (hex, alpha) => {
-      const rgb = hexRgb(hex);
-      return 'rgb(' + rgb.red + ', ' + rgb.green + ', ' + rgb.blue + ', ' + alpha + ')';
-    };
+    const { currentTheme } = useContext(ThemeContext);
 
     const grommetThemeColors = GrommetTheme.global.colors;
     const theme = deepMerge(GrommetTheme, {
         global: {
             colors: {
                 placeholder: {
-                    dark: convertToRGB(grommetThemeColors.baseColor.dark, '0.35'),
-                    light: convertToRGB(grommetThemeColors.baseColor.light, '0.35'),
+                    dark: hexColorWithAlpha(grommetThemeColors.baseColor.dark, '0.35'),
+                    light: hexColorWithAlpha(grommetThemeColors.baseColor.light, '0.35'),
                 }
             },
             focus: {
@@ -40,7 +38,7 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
             color: grommetThemeColors.baseColor
         },
         box: {
-            extend: {color: darkMode ? grommetThemeColors.baseColor.dark : grommetThemeColors.baseColor.light}
+            extend: {color: currentTheme.dark ? grommetThemeColors.baseColor.dark : grommetThemeColors.baseColor.light}
         }
     })
 
@@ -90,7 +88,7 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
                     margin={{horizontal: 'large'}}
                     color='baseColor'
                 >
-                    <ThemeContext.Extend value={theme}>
+                    <GrommetThemeContext.Extend value={theme}>
                         <FormField name="name" required>
                             <TextInput color={'baseColor'} name="name" type="name" placeholder={'Enter Name'}/>
                         </FormField>
@@ -104,18 +102,18 @@ const ContactForm = ({ setShowContentForm, showEmailSentNotification, darkMode }
                                 <TextArea resize={false} name="content" placeholder={'Enter Message'}/>
                             </FormField>
                         </Box>
-                    </ThemeContext.Extend>
+                    </GrommetThemeContext.Extend>
 
-                    <ThemeContext.Extend value={buttonTheme}>
+                    <GrommetThemeContext.Extend value={buttonTheme}>
                         <Box direction="row" justify="between" margin={{top: 'medium'}}>
                             {
-                                mobileView ? <FlipButton darkMode={darkMode} type="submit" label="Send Message" primary fill /> :
+                                mobileView ? <FlipButton type="submit" label="Send Message" primary fill /> :
                                              <ElevatedButton type="submit" label="Send Message" primary />
                             }
 
                             {!mobileView && <Button label="Close" onClick={disableContactForm}/>}
                         </Box>
-                    </ThemeContext.Extend>
+                    </GrommetThemeContext.Extend>
 
                 </Form>
         </Box>

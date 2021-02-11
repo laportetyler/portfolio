@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Box, Image, Paragraph, ResponsiveContext } from "grommet";
-import ReactCardFlip from "react-card-flip";
 import './About.scss'
 import SectionHeading from "../../SectionHeading/SectionHeading";
 import aboutMessages from "../../../content/aboutMessages.json";
+import ThemedReactFlipCard from "../../ThemedReactFlipCard";
 
-const About = ({darkMode, aboutRef}) => {
+const About = ({aboutRef}) => {
 
     const mobileView = useContext(ResponsiveContext) === 'small';
 
@@ -34,16 +34,19 @@ const About = ({darkMode, aboutRef}) => {
                      justify={'center'}
                      flex={false}
                 >
-                    <ReactCardFlip isFlipped={darkMode}
+                    <ThemedReactFlipCard
                                    flipDirection='horizontal'
                                    flipSpeedBackToFront={2}
                                    flipSpeedFrontToBack={2}
                                    infinite='true'
                                    className='about-image-container'
-                    >
-                        <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/dark_about_image.png" />
-                        <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/light_about_image.png" />
-                    </ReactCardFlip>
+                                   lightCard={
+                                       <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/dark_about_image.png" />
+                                   }
+                                   darkCard={
+                                       <Image height={'medium'} width={'medium'} className={'about-image'} src="/static/light_about_image.png" />
+                                   }
+                    />
                 </Box>
             </Box>
         </Box>
