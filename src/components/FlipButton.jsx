@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ElevatedButton from "./ElevatedButton";
 
 
-const FlipButton = ({darkMode, ...buttonProps}) => {
+const FlipButton = ({darkMode, fill, ...buttonProps}) => {
 
     const ButtonContainer = styled(Box)`
         box-shadow: 0 4px 6px, 0 1px 3px;
@@ -23,15 +23,18 @@ const FlipButton = ({darkMode, ...buttonProps}) => {
     `
 
     return (
-        <ReactCardFlip isFlipped={darkMode}
-                       flipDirection={'vertical'}
-                       flipSpeedBackToFront={2}
-                       flipSpeedFrontToBack={2}
-                       infinite='true'
-        >
-            <ElevatedButton color={GrommetTheme.global.colors.standoutColor.light} {...buttonProps} />
-            <ElevatedButton color={GrommetTheme.global.colors.standoutColor.dark} {...buttonProps} />
-        </ReactCardFlip>
+        <Box fill={fill} >
+            <ReactCardFlip isFlipped={darkMode}
+                           flipDirection={'vertical'}
+                           flipSpeedBackToFront={2}
+                           flipSpeedFrontToBack={2}
+                           infinite='true'
+            >
+                <ElevatedButton color={GrommetTheme.global.colors.standoutColor.light} {...buttonProps} />
+                <ElevatedButton color={GrommetTheme.global.colors.standoutColor.dark} {...buttonProps} />
+            </ReactCardFlip>
+        </Box>
+
     )
 }
 
