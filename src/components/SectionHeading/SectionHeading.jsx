@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Box, Heading, ResponsiveContext } from "grommet";
+import React from 'react';
+import { Box, Heading } from "grommet";
 import './SectionHeading.scss'
 
 const SectionHeading = ({align, children}) => {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box, Button, Card, Heading, Image, Main, Paragraph, ResponsiveContext, Stack } from "grommet";
+import { Box, Card, Heading, Paragraph, ResponsiveContext, Stack } from "grommet";
 import { GrommetTheme } from "../../../theme/GrommetTheme";
 import ProjectTechnology from "./ProjectTechnology";
 import { Github } from "grommet-icons";

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Notification from "../Notification";
 import { Box, Text } from "grommet";
 import { StatusGood } from "grommet-icons";

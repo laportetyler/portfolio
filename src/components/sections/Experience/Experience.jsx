@@ -1,6 +1,5 @@
 import React from 'react';
 import SectionHeading from "../../SectionHeading/SectionHeading";
-import { Box } from "grommet";
 
 const Experience = () => {
     return (

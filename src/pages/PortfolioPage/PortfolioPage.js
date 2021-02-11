@@ -1,9 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Box, Grid, Grommet, Heading, ResponsiveContext } from "grommet";
+import { Box, Grid, Grommet, ResponsiveContext } from "grommet";
 import { GrommetTheme } from "../../theme/GrommetTheme";
 import Introduction from "../../components/sections/Introduction/Introduction";
 import About from "../../components/sections/About/About";
-import Experience from "../../components/sections/Experience/Experience";
 import Projects from "../../components/sections/Projects/Projects";
 import Header from "../../components/Header/Header";
 import LinksSideBar from "../../components/SideBars/LinksSideBar";
@@ -14,7 +13,6 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import Contact from "../../components/sections/Contact/Contact";
 import EmailSentNotification from "../../components/ContactForm/EmailSentNotification";
 import ContactFormOverlay from "../../components/ContactForm/ContactFormOverlay";
-import styled from "styled-components";
 
 const PortfolioPage = () => {
 

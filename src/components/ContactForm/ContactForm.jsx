@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Box, Button, Form, FormField, Heading, Layer, ResponsiveContext, TextArea, TextInput, ThemeContext } from "grommet";
+import { Box, Button, Form, FormField, ResponsiveContext, TextArea, TextInput, ThemeContext } from "grommet";
 import { deepMerge } from "grommet/utils";
 import './ContactForm.scss'
 import { GrommetTheme } from "../../theme/GrommetTheme";
