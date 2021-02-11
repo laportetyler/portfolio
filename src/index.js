@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PortfolioPage from './pages/PortfolioPage/PortfolioPage';
+import PortfolioApp from "./PortoflioApp";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <PortfolioPage initialDarkMode={localStorage.getItem('darkMode') === 'true'} />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <PortfolioApp />
+    </React.StrictMode>,
+    document.getElementById('root')
 );
