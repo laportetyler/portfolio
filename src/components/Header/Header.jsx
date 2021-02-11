@@ -4,10 +4,12 @@ import './Header.scss'
 import scrollIntoView from "../../utils/ScrollIntoView";
 import styled from "styled-components";
 import * as Icons from "grommet-icons";
+import ThemeContext from "../../context/ThemeContext";
 
-const Header = ({ pageRefs, toggleTheme }) => {
+const Header = ({ pageRefs }) => {
 
     const size = useContext(ResponsiveContext);
+    const { currentTheme } = useContext(ThemeContext);
 
     const MobileHeader = styled(Box)`
         z-index: 1;
@@ -25,7 +27,7 @@ const Header = ({ pageRefs, toggleTheme }) => {
     if (size === 'small') {
         return (
             <MobileHeader as='header' >
-                <Button color={'standoutColor'} icon={<Icons.View size={'25px'} />} onClick={toggleTheme} />
+                <Button color={'standoutColor'} icon={<Icons.View size={'25px'} />} onClick={currentTheme.toggle} />
             </MobileHeader>
         )
     }

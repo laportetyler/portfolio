@@ -8,7 +8,6 @@ const Footer = ({ bottomRef }) => {
     const size = useContext(ResponsiveContext);
 
     return (
-
         <Box flex align={'center'} justify={'end'} ref={bottomRef}>
 
             { size === 'small' &&
