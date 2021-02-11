@@ -40,7 +40,7 @@ export const GrommetTheme = deepMerge(grommet, {
         font: {
             family: 'Roboto',
             size: '18px',
-            height: '20px',
+            height: '20px'
         },
         focus: {
             border: {
