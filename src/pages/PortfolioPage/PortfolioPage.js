@@ -17,8 +17,6 @@ import ThemeContext from "../../context/ThemeContext";
 
 const PortfolioPage = ({initialDarkMode}) => {
 
-    console.log('re-render: ' + initialDarkMode );
-
     const [darkMode, setDarkMode] = useState(initialDarkMode);
     const [showContactForm, setShowContentForm] = useState(false);
     const [showEmailSuccessNotification, setShowEmailSuccessNotification] = useState(false);
