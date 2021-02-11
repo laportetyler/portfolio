@@ -28,7 +28,12 @@ const About = ({darkMode, aboutRef}) => {
 
                 </Box>
 
-                <Box margin={{left: 'large', top: 'large' }} height={mobileView ? '' : '100%'} align={'center'} justify={'center'} flex={false} >
+                <Box margin={{left: mobileView ? '' : 'large', top: 'large' }}
+                     height={mobileView ? '' : '100%'}
+                     align={'center'}
+                     justify={'center'}
+                     flex={false}
+                >
                     <ReactCardFlip isFlipped={darkMode}
                                    flipDirection='horizontal'
                                    flipSpeedBackToFront={2}
