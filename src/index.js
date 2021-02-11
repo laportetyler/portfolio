@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PortfolioPage />
+    <PortfolioPage initialDarkMode={localStorage.getItem('darkMode') === 'true'}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
