@@ -11,7 +11,7 @@ const Notification = ({ onClose, duration, position, children }) => {
         }
     }
 
-    useEffect(closeAfterTimeout, []);
+    useEffect(closeAfterTimeout, [duration, onClose]);
 
     return (
         <Layer position={position || 'top'} margin="medium" plain={!!duration} responsive>
