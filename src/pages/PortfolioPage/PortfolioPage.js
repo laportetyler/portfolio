@@ -14,6 +14,7 @@ import Contact from "../../components/sections/Contact/Contact";
 import EmailSentNotification from "../../components/ContactForm/EmailSentNotification";
 import ContactFormOverlay from "../../components/ContactForm/ContactFormOverlay";
 import ThemeContext from "../../context/ThemeContext";
+import Div100vh from "react-div-100vh";
 
 const PortfolioPage = () => {
 
@@ -70,10 +71,17 @@ const PortfolioPage = () => {
                                             <About aboutRef={pageRefs.about} />
                                             <Projects projectsRef={pageRefs.projects} />
 
-                                            <Box flex={false} align='center' height={size === 'small' ? '100vh' : ''} >
-                                                <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
-                                                <Footer bottomRef={pageRefs.bottom} />
-                                            </Box>
+                                            {
+                                                size === 'small' ?
+                                                    <Div100vh>
+                                                        <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
+                                                        <Footer bottomRef={pageRefs.bottom} />
+                                                    </Div100vh>  :
+                                                    <Box flex={false} align='center' height={size === 'small' ? '100vh' : ''} >
+                                                        <Contact setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} >{contactForm}</Contact>
+                                                        <Footer bottomRef={pageRefs.bottom} />
+                                                    </Box>
+                                            }
 
                                         </Box>
                                         <ActionsSideBar pageRefs={pageRefs} />
