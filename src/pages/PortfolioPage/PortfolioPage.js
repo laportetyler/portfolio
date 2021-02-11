@@ -15,19 +15,19 @@ import EmailSentNotification from "../../components/ContactForm/EmailSentNotific
 import ContactFormOverlay from "../../components/ContactForm/ContactFormOverlay";
 import ThemeContext from "../../context/ThemeContext";
 
-const PortfolioPage = ({initialDarkMode}) => {
+const PortfolioPage = ({ initialDarkThemeEnabled }) => {
 
-    const [darkMode, setDarkMode] = useState(initialDarkMode);
+    const [darkThemeEnabled, setDarkModeEnabled] = useState(initialDarkThemeEnabled);
     const [showContactForm, setShowContentForm] = useState(false);
     const [showEmailSuccessNotification, setShowEmailSuccessNotification] = useState(false);
 
     const toggleTheme = () => {
-        setDarkMode(!darkMode);
+        setDarkModeEnabled(!darkThemeEnabled);
     }
 
     useEffect(() => {
-        localStorage.setItem('darkMode', Boolean(darkMode).toString());
-    }, [darkMode])
+        localStorage.setItem('darkThemeEnabled', Boolean(darkThemeEnabled).toString());
+    }, [darkThemeEnabled])
 
     const pageRefs = {
         about: useRef(null),
@@ -44,12 +44,12 @@ const PortfolioPage = ({initialDarkMode}) => {
 
     return (
 
-            <Grommet theme={GrommetTheme} themeMode={darkMode ? 'dark' : 'light'} full className={'global-transition-color'} >
+            <Grommet theme={GrommetTheme} themeMode={darkThemeEnabled ? 'dark' : 'light'} full className={'global-transition-color'} >
                     <ResponsiveContext.Consumer>
                         {size => (
 
                             <ThemeContext.Provider
-                                value={{currentTheme: {dark: darkMode, toggle: toggleTheme}, initialTheme: {dark: initialDarkMode}}}
+                                value={{currentTheme: {dark: darkThemeEnabled, toggle: toggleTheme}, initialTheme: {dark: initialDarkThemeEnabled}}}
                             >
 
                                 <Grid fill rows={["auto", "auto"]} ref={pageRefs.top} width={'xxlarge'} >
