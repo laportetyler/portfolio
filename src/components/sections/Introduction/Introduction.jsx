@@ -22,7 +22,7 @@ const Introduction = ({setShowContentForm, contactRef}) => {
                     </Box>
                     <Box flex={false} pad={{top: 'small'}} direction='row'>
                         <FlipButton primary label={'Contact'} onClick={contactOnClick}  />
-                        <FlipButton primary label={'Resume'} />
+                        <FlipButton primary label={'Resume'} href={'/tyler_laporte_resume.pdf'} target={'_blank'} />
                     </Box>
                 </Box>
             </Box>
