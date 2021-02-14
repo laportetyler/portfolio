@@ -5,8 +5,12 @@
 
   * {
     transition: all 2s ease-in-out;
-    transition-property: color, background-color;
+    transition-property: color, background-color, border-bottom-color, border-top-color, border-left-color, border-right-color;
   }
+}
+
+.no-transition {
+  transition: none;
 }
 
 .italic-text {

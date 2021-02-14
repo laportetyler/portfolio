@@ -14,6 +14,7 @@ import Contact from "../../components/sections/Contact/Contact";
 import EmailSentNotification from "../../components/ContactForm/EmailSentNotification";
 import ContactFormOverlay from "../../components/ContactForm/ContactFormOverlay";
 import ThemeContext from "../../context/ThemeContext";
+import Experience from "../../components/sections/Experience/Experience";
 
 const PortfolioPage = ({ initialDarkThemeEnabled }) => {
 
@@ -31,6 +32,7 @@ const PortfolioPage = ({ initialDarkThemeEnabled }) => {
 
     const pageRefs = {
         about: useRef(null),
+        experience: useRef(null),
         projects: useRef(null),
         contact: useRef(null),
         bottom: useRef(null),
@@ -58,9 +60,10 @@ const PortfolioPage = ({ initialDarkThemeEnabled }) => {
 
                                     <Box direction={'row'}>
                                         <LinksSideBar />
-                                        <Box fill align='center' direction={'column'}>
+                                        <Box fill align='center' >
                                             <Introduction setShowContentForm={setShowContentForm} contactRef={pageRefs.contact} />
                                             <About aboutRef={pageRefs.about} />
+                                            <Experience experienceRef={pageRefs.experience} />
                                             <Projects projectsRef={pageRefs.projects} />
 
                                             <Box flex={false} align='center' height={size === 'small' ? '100vh' : ''} >
