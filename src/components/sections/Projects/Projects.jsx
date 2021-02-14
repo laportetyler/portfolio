@@ -11,7 +11,7 @@ const Projects = ({ projectsRef }) => {
     const mobileView = useContext(ResponsiveContext) === 'small';
 
     return (
-        <Box flex={false} ref={projectsRef} width={'xlarge'} margin={{top: '150px'}} >
+        <Box flex={false} ref={projectsRef} width={'xlarge'} margin={{bottom: '120px'}} pad={{top: '30px'}} >
             <SectionHeading>Projects</SectionHeading>
             { projects && projects.map((project) => {
                 return (
