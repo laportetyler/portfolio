@@ -32,6 +32,10 @@ export const GrommetTheme = deepMerge(grommet, {
                 dark: '#252541',
                 light: '#d2e0e8'
             },
+            icon: {
+                dark: '#9251c4',
+                light: '#fc5e8f'
+            },
             successNotification: {
                 dark: '#2fd73f',
                 light: '#1f811f'

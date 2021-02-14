@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Box, Nav, ResponsiveContext } from "grommet";
 
-const SideBar = ({ children, className }) => {
+const SideBar = ({ className, children }) => {
 
     const size = useContext(ResponsiveContext);
 
