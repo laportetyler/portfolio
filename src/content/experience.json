@@ -1,0 +1,36 @@
+[
+  {
+    "company": "Autodata Solutions",
+    "positions": [
+      {
+        "title": "Intermediate Software Developer",
+        "descriptions": [
+          "Drove design solutions for new modules and improvements for monolithic Java/Spring project used by GM to author vehicle incentives.",
+          "Communicated with business clients to explain complicated issues and to provide support for how the data provided by our services should be consumed to meet their needs.",
+          "Led development team in a system wide refactor of a multi-module project to transition searching functionality from bitwise MySQL queries to Apache Solr.",
+          "Provided continuous mentorship to junior developers through code reviews, pair programming, knowledge transfer sessions, and design discussions with a focus on weighing the benefits and drawbacks of each potential solution.",
+          "Architected and implemented fault tolerant message queue service to handle data synchronization between MySQL and Apache Solr."
+        ]
+      },
+      {
+        "title": "Junior Software Developer",
+        "descriptions": [
+          "Investigated and resolved production issues for client-facing applications.",
+          "Implemented performance improvements in critical web services that brought the average request time down by nearly 50% by optimizing queries for the most common request patterns.",
+          "Developed changes to ansible playbooks for deploying applications to QA, UAT, and Production environments.",
+          "Created onboarding application with stubbed out tasks to help new hires gain experience with the common tech stack used within our business unit.",
+          "Worked closely with SAs and project directors to determine solutions that would meet client needs."
+        ]
+      },
+      {
+        "title": "Software Development Intern",
+        "descriptions": [
+          "Developed new features and maintained code for e-commerce web application used by dealers to sell vehicle accessories to customers.",
+          "Created internal Java library with AspectJ to easily record performance of API endpoints.",
+          "Implemented process to generate legal offer templates using the FreeMarker template engine.",
+          "Made Spring Batch ETL to replacement error prone manual data entry process. Saved many man hours over the years but more importantly reduced the number of production issues caused by incorrect data entry."
+        ]
+      }
+    ]
+  }
+]

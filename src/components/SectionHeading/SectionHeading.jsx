@@ -2,20 +2,17 @@ import React from 'react';
 import { Box, Heading } from "grommet";
 import './SectionHeading.scss'
 
-const SectionHeading = ({align, children}) => {
+const SectionHeading = ({fitContent, children}) => {
     return (
-        <Box flex={false} margin={'none'} >
-            <Box  flex={false} alignSelf={align ? align : 'left'}>
-                <Heading fill
-                         color='headerText'
-                         className='heading transition-color'
+        <Box flex={false} width={fitContent ? 'fit-content' : ''} margin={'none'} pad={{bottom: '2px'}} border={{color: 'headerText', side: 'bottom', size: '3px' }} >
+            <Heading
+                     color='headerText'
                          size='small'
                          margin={'none'}
                          responsive={false}
-                >
-                    {children}
-                </Heading>
-            </Box>
+            >
+                {children}
+            </Heading>
         </Box>
     )
 }

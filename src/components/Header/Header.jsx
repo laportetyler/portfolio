@@ -42,6 +42,7 @@ const Header = ({ pageRefs }) => {
         >
             <Button pad={{horizontal: 'large'}} secondary label='Contact' onClick={() => scrollIntoView(pageRefs.contact)} />
             <Button pad={{horizontal: 'large'}} secondary label='Projects' onClick={() => scrollIntoView(pageRefs.projects)} />
+            <Button pad={{horizontal: 'large'}} secondary label='Experience' onClick={() => scrollIntoView(pageRefs.experience)} />
             <Button pad={{horizontal: 'large'}} secondary label='About' onClick={() => scrollIntoView(pageRefs.about)} />
         </Box>
     )
