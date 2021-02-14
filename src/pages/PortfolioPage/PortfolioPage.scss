@@ -5,12 +5,26 @@
 
   * {
     transition: all 2s ease-in-out;
-    transition-property: color, background-color, border-bottom-color, border-top-color, border-left-color, border-right-color;
+    transition-property: color, background-color, stroke, fill, border-bottom-color, border-top-color, border-left-color, border-right-color;
   }
 }
 
 .no-transition {
   transition: none;
+}
+
+.icon-transition {
+  polyline {
+    transition: none
+  }
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none !important;
 }
 
 .italic-text {

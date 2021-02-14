@@ -19,11 +19,14 @@ import Experience from "../../components/sections/Experience/Experience";
 const PortfolioPage = ({ initialDarkThemeEnabled }) => {
 
     const [darkThemeEnabled, setDarkModeEnabled] = useState(initialDarkThemeEnabled);
+    const [themeTransitioning, setThemeTransitioning] = useState(false);
     const [showContactForm, setShowContentForm] = useState(false);
     const [showEmailSuccessNotification, setShowEmailSuccessNotification] = useState(false);
 
     const toggleTheme = () => {
+        setThemeTransitioning(true);
         setDarkModeEnabled(!darkThemeEnabled);
+        setTimeout(function(){setThemeTransitioning(false)}, 2000);
     }
 
     useEffect(() => {
@@ -51,7 +54,9 @@ const PortfolioPage = ({ initialDarkThemeEnabled }) => {
                         {size => (
 
                             <ThemeContext.Provider
-                                value={{currentTheme: {dark: darkThemeEnabled, toggle: toggleTheme}, initialTheme: {dark: initialDarkThemeEnabled}}}
+                                value={{currentTheme: {dark: darkThemeEnabled, toggle: toggleTheme},
+                                        themeTransitioning: themeTransitioning,
+                                        initialTheme: {dark: initialDarkThemeEnabled}}}
                             >
 
                                 <Grid fill rows={["auto", "auto"]} ref={pageRefs.top} width={'xxlarge'} >

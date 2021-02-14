@@ -6,6 +6,7 @@ const ThemeContext = React.createContext(
             dark: false,
             toggle: () => {}
         },
+        themeTransitioning: false,
         initialTheme: {
             dark: false
         }
