@@ -14,8 +14,8 @@
 }
 
 .icon-transition {
-  polyline path {
-    transition: none
+  polyline, path, polygon {
+    transition: none;
   }
 }
 

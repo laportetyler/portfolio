@@ -21,8 +21,15 @@
   }
 }
 
-.mobileHeader {
+.mobile-header {
+  z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
+
+  button {
+    padding: 0;
+    margin-top: 20px;
+    margin-right: 8px;
+  }
 }

@@ -12,9 +12,9 @@ const ActionsSideBar = ({ pageRefs }) => {
 
     return (
         <SideBar className='actionsSideBar'>
-            <Button className={'icon-transition'} icon={<Icons.CaretUp />}  onClick={() => scrollIntoView(pageRefs.top)} />
-            <Button className={'icon-transition'} icon={<Icons.View />} onClick={currentTheme.toggle} />
-            <Button className={'icon-transition'} icon={<Icons.CaretDown />} onClick={() => scrollIntoView(pageRefs.bottom)} />
+            <Button icon={<Icons.CaretUp color={'headerText'} className={'icon-transition'} />}  onClick={() => scrollIntoView(pageRefs.top)} />
+            <Button icon={<Icons.View color={'headerText'} className={'icon-transition'} />} onClick={currentTheme.toggle} />
+            <Button icon={<Icons.CaretDown color={'headerText'} className={'icon-transition'} />} onClick={() => scrollIntoView(pageRefs.bottom)} />
         </SideBar>
     )
 }

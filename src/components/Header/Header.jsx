@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Box, Button, ResponsiveContext } from 'grommet';
 import './Header.scss'
 import scrollIntoView from "../../utils/ScrollIntoView";
-import styled from "styled-components";
 import * as Icons from "grommet-icons";
 import ThemeContext from "../../context/ThemeContext";
 
@@ -11,24 +10,11 @@ const Header = ({ pageRefs }) => {
     const size = useContext(ResponsiveContext);
     const { currentTheme } = useContext(ThemeContext);
 
-    const MobileHeader = styled(Box)`
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        
-        button {
-            padding: 0;
-            margin-top: 20px;
-            margin-right: 8px;
-        }
-    `;
-
     if (size === 'small') {
         return (
-            <MobileHeader as='header' >
-                <Button color={'standoutColor'} icon={<Icons.View size={'25px'} />} onClick={currentTheme.toggle} />
-            </MobileHeader>
+            <Box className={'mobile-header'} >
+                <Button color={'standoutColor'} icon={<Icons.View className={'icon-transition'} size={'25px'} />} onClick={currentTheme.toggle} />
+            </Box>
         )
     }
 
