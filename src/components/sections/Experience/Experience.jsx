@@ -12,7 +12,7 @@ const Experience = ({experienceRef}) => {
     const [selectedPosition, setSelectedPosition] = useState(0);
 
     return (
-        <Box flex={false} ref={experienceRef} width={'xlarge'}  >
+        <Box flex={false} ref={experienceRef} width={'xlarge'} margin={{bottom: '120px'}} pad={{top: '30px'}}>
             <SectionHeading fitContent>Experience</SectionHeading>
             <Box flex={false} margin={{top: 'small'}} direction={mobileView ? 'column' : 'row'} >
                 <PositionHeadings jobs={jobs} selectedPosition={selectedPosition} setSelectedPosition={setSelectedPosition} />

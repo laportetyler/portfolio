@@ -11,8 +11,8 @@ const Contact = ({ setShowContentForm, contactRef, children }) => {
         <Box ref={contactRef}
              align={'center'}
              flex={false}
-             margin={mobileView ? {vertical: '10px'} : 'xlarge'}
-             pad={mobileView ? '' : {bottom: 'xlarge'}}
+             margin={mobileView ? '' : 'xlarge'}
+             pad={mobileView ? {top: '30px'} : {bottom: 'xlarge'}}
         >
             <SectionHeading>Contact</SectionHeading>
             <Paragraph textAlign={'center'} color={'baseColor'} >
