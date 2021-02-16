@@ -20,7 +20,7 @@ const Positions = ({jobs, selectedPosition}) => {
     const PositionContainer = mobileView ? Box : Stack;
 
     return (
-        <Box margin={mobileView ? {vertical: 'small'} : {vertical: '36px'}} border={ mobileView ? '' : {color: 'headerText', side:'top', size: 'medium'}} >
+        <Box margin={mobileView ? {vertical: 'small'} : {vertical: '36px'}} border={ mobileView ? '' : {color: 'headerText', side:'top', size: '3px'}} >
             <PositionContainer flex={false} interactiveChild={selectedPosition} margin={ mobileView ? 'none' : {left: 'medium', top: '8px' }} >
 
                 {positions && positions.map((position, positionId) => {

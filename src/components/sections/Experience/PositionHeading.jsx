@@ -12,7 +12,7 @@ const PositionHeading = ({position, positionId, selectedPosition, setSelectedPos
     return (
         <Box
             pad={{left: 'medium', bottom: 'small'}} margin={{left: '4px'}}
-            border={{color: selected || hovering ? 'standoutColor' : 'headerText', side:'left', size:'medium'}}
+            border={{color: selected || hovering ? 'standoutColor' : 'headerText', side:'left', size:'3px'}}
             onClick={() => setSelectedPosition(positionId)}
             className={themeTransitioning ? '' : 'no-transition'}
             onMouseOver={() => setHovering(true)}
