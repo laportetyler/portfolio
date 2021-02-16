@@ -23,7 +23,7 @@ const PositionHeadings = ({jobs, selectedPosition, setSelectedPosition}) => {
                                 </Text>
                             </Box>
                             {
-                                jobIndex === 0 && <Box fill={'horizontal'} margin={{top: '12px'}} border={{color: 'headerText', side:'top', size:'medium'}} />
+                                jobIndex === 0 && <Box fill={'horizontal'} margin={{top: '12px'}} border={{color: 'headerText', side:'top', size:'3px'}} />
                             }
                         </Box>
 
