@@ -10,7 +10,7 @@ const About = ({aboutRef}) => {
     const mobileView = useContext(ResponsiveContext) === 'small';
 
     return (
-        <Box flex={false} ref={aboutRef} margin={{bottom: '120px'}} width={'xlarge'} pad={mobileView ? '' : '30px'}>
+        <Box flex={false} ref={aboutRef} margin={{bottom: '120px'}} width={'xlarge'} pad={mobileView ? '' : {top: '30px'}}>
             <Box direction={mobileView ? 'column' : 'row'} flex={false}>
                 <Box >
 
